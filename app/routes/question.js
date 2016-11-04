@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('question', params.question_id);
   },
+
   actions: {
     update(question, params) {
       Object.keys(params).forEach(function(key) {
@@ -22,6 +23,11 @@ export default Ember.Route.extend({
         return question.save();
       });
       this.transitionTo('question', question);
+    },
+    upvote(answer) {
+      answer.set('upvotes', answer.get('upvotes') + 1);
+      console.log(answer.get('upvotes'));
+      answer.save();
     }
   }
 });

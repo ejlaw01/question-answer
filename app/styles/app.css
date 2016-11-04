@@ -24,3 +24,17 @@ button {
   position: absolute;
   margin: 20px;
 }
+
+#upvote {
+  height: 25px;
+  width: 25px;
+  background-color: lightgreen;
+}
+
+#upvote > img {
+  position: relative;
+  top:-3px;
+  left: -5px;
+  height: 20px;
+  width: auto;
+}
